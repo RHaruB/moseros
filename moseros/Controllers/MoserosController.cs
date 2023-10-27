@@ -19,5 +19,10 @@ namespace moseros.Controllers
         {
             return mosero.ObtenerMoseros() +" " + nombre;
         }
+        [HttpGet]
+        public string ObtenerMoseros2()
+        {
+            return mosero.ObtenerMoseros() ;
+        }
     }
 }
