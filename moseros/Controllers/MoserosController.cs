@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using moseros.services;
+using moseros.viewmodels;
 
 namespace moseros.Controllers
 {
@@ -14,15 +15,20 @@ namespace moseros.Controllers
         {
             this.mosero = _moseros;
         }
-        [HttpGet]
+        [HttpGet("ObtenerMoseros")]
         public string ObtenerMoseros(string nombre)
         {
             return mosero.ObtenerMoseros() +" " + nombre;
         }
-        [HttpGet]
-        public string ObtenerMoseros2()
+        [HttpGet("ObtenerMoseros2")]
+        public ActionResult ObtenerMoseros2()
         {
-            return mosero.ObtenerMoseros() ;
+            return new JsonResult( mosero.ObtenerMoseros()) ;
+        }
+        [HttpPost("setMosero")]
+        public bool setMosero(MoserosVM moseros)
+        {
+            return mosero.setMosero(moseros);
         }
     }
 }

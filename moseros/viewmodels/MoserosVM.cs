@@ -8,5 +8,8 @@ namespace moseros.viewmodels
         public string nombre { get; set; }
         public decimal edad { get; set; }
 
+        public string? Algo { get; set; }
+
+
     }
 }

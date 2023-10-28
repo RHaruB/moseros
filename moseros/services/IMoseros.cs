@@ -1,7 +1,12 @@
-﻿namespace moseros.services
+﻿using moseros.Models;
+using moseros.viewmodels;
+
+namespace moseros.services
 {
     public interface IMoseros
     {
-        public string ObtenerMoseros();
+        public List<Amante> ObtenerMoseros();
+
+        public bool setMosero(MoserosVM moseros);
     }
 }
